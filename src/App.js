@@ -1,6 +1,6 @@
 import './App.css';
 
-const PDF_FILE_URL = 'http://localhost:3000/CMPE 491 - Project Proposal.pdf';
+const PDF_FILE_URL = 'http://51.20.5.155//CMPE 491 - Project Proposal.pdf';
 
 function App() {
   const downloadFileAtUrl = (url) => {
