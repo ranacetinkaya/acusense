@@ -6,7 +6,3 @@ files:
     overwrite: true
 file_exists_behavior: OVERWRITE
 hooks:
-  AfterInstall:
-    - location: scripts/cleanup.sh
-      timeout: 300
-      runas: root
