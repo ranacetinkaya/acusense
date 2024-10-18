@@ -2,9 +2,11 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /path/to/destination
+    destination: /opt/acusense
+    overwrite: true
+file_exists_behavior: OVERWRITE
 hooks:
   AfterInstall:
-    - location: scripts/install_dependencies.sh
+    - location: scripts/cleanup.sh
       timeout: 300
       runas: root
