@@ -3,7 +3,7 @@ name: Deploy react-app
 on:
   push:
     branches:
-      - master  # Replace with your branch name
+      - master
 
 jobs:
   deploy:
@@ -13,13 +13,12 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
 
-      # Uncomment this if you need AWS credentials for further actions.
-      # - name: Configure AWS Credentials
-      #   uses: aws-actions/configure-aws-credentials@v1
-      #   with:
-      #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      #     aws-region: eu-north-1  # Correct AWS region
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}  # Using the AWS_REGION secret
 
       - name: Build and Deploy
         run: |
