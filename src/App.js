@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className='App'>
-      <button onClick={() => downloadFileAtUrl(PDF_FILE_URL)}>Project Proposal</button>
+      <button onClick={() => downloadFileAtUrl(PDF_FILE_URL)}>Project </button>
     </div>
   );
 }
