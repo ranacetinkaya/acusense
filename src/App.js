@@ -1,27 +1,16 @@
+import React from 'react';
 import './App.css';
 
-const PDF_FILE_URL = 'http://localhost:3000/CMPE 491 - Project Proposal.pdf';
+const PDF_FILE_URL = '/CMPE%20491%20-%20Project%20Proposal.pdf'; // React uygulamanızın 'public' klasöründeki dosya
 
 function App() {
   const downloadFileAtUrl = (url) => {
-    fetch(url)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.blob();
-      })
-      .then(blob => {
-        const blobURL = window.URL.createObjectURL(new Blob([blob])); 
-        const fileName = url.split('/').pop();
-        const aTag = document.createElement('a');
-        aTag.href = blobURL;
-        aTag.setAttribute('download', fileName); 
-        document.body.appendChild(aTag);
-        aTag.click();
-        aTag.remove();
-      })
-      .catch(error => console.error('Error downloading the file:', error)); 
+    const aTag = document.createElement('a');
+    aTag.href = url;
+    aTag.setAttribute('download', 'Project_Proposal.pdf'); // İndirme adı
+    document.body.appendChild(aTag);
+    aTag.click();
+    aTag.remove();
   };
 
   return (
