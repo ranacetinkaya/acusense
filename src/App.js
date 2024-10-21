@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-const PDF_FILE_URL = 'CMPE491-ProjectProposal.pdf';
+const PDF_FILE_URL = '/CMPE491-ProjectProposal.pdf';
 
 function App() {
   const downloadFileAtUrl = (url) => {
