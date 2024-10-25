@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
 
-const PDF_FILE_URL = '/CMPE491-ProjectProposal.pdf';
+const PROJECT_NAME = 'Development of a Turkish Language Processing System with Integrated Speech Recognition and Synthesis';  
+const PROJECT_PROPOSAL_FILE_URL = '/CMPE 491 - Project Proposal.pdf';
+const PROJECT_SPECIFICATIONS_FILE_URL = '/CMPE 491 - Project Specifications Report.pdf';
 
 function App() {
   const downloadFileAtUrl = (url) => {
@@ -27,7 +29,21 @@ function App() {
 
   return (
     <div className='App'>
-      <button onClick={() => downloadFileAtUrl(PDF_FILE_URL)}>Project Proposal</button>
+      <header className='App-title'>
+        <h1>{PROJECT_NAME}</h1>
+      </header>
+      <div className='App-content'>
+        <h2>Project Resources</h2>
+        <p>Download important project documents below.</p>
+        <div className='button-container'>
+          <button onClick={() => downloadFileAtUrl(PROJECT_PROPOSAL_FILE_URL)}>
+            Project Proposal
+          </button>
+          <button onClick={() => downloadFileAtUrl(PROJECT_SPECIFICATIONS_FILE_URL)}>
+            Project Specifications Report
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
