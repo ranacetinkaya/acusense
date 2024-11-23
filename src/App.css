@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 .App {
   text-align: center;
-  font-family: 'Arial', sans-serif;
-  background-color: #f3f4f6;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #eef2f3, #ffffff); 
+  color: #2b2d42; 
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -10,50 +13,85 @@
 }
 
 .App-title {
-  width: 100%;
-  color: #333; 
-  padding: 10px;
-  font-size: 1.2rem;
-  font-weight: bold;
+  color: #2b2d42;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 20px 0;
+  animation: fadeIn 1s ease-in-out; 
 }
 
-.App-content {
-  margin-top: 20px;
+.content-box {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
 }
 
 .App-content h2 {
-  font-size: 1.8rem;
-  color: #333;
-  margin: 10px 0;
+  font-size: 1.5rem;
+  color: #3f51b5; 
 }
 
 .App-content p {
-  font-size: 1.1rem;
-  color: #666;
+  font-size: 1rem;
+  color: #4a4a4a;
+  margin-bottom: 20px;
 }
 
 .button-container {
   display: flex;
-  gap: 15px;
-  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; 
 }
 
 button {
-  background-color: #4CAF50;
+  background: linear-gradient(135deg, #6a11cb, #2575fc); 
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 25px;
   font-size: 1rem;
-  border-radius: 5px;
+  border-radius: 25px; 
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 button:hover {
-  background-color: #45a049;
+  transform: scale(1.05); 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
 }
 
 button:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.5);
+  box-shadow: 0 0 0 4px rgba(97, 218, 251, 0.5);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .button-container {
+    flex-direction: column; 
+    gap: 10px;
+  }
+
+  .App-title {
+    font-size: 1.5rem;
+  }
+
+  button {
+    width: 100%; 
+    max-width: 300px;
+  }
 }

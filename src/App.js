@@ -4,6 +4,7 @@ import './App.css';
 const PROJECT_NAME = 'Development of a Turkish Language Processing System with Integrated Speech Recognition and Synthesis';  
 const PROJECT_PROPOSAL_FILE_URL = '/CMPE 491 - Project Proposal.pdf';
 const PROJECT_SPECIFICATIONS_FILE_URL = '/CMPE 491 - Project Specifications Report.pdf';
+const PROJECT_ANALYSIS_REPORT_FILE_URL = '/CMPE 491 - Project Analysis Report.pdf'
 
 function App() {
   const downloadFileAtUrl = (url) => {
@@ -41,6 +42,9 @@ function App() {
           </button>
           <button onClick={() => downloadFileAtUrl(PROJECT_SPECIFICATIONS_FILE_URL)}>
             Project Specifications Report
+          </button>
+          <button onClick={() => downloadFileAtUrl(PROJECT_ANALYSIS_REPORT_FILE_URL)}>
+            Project Analysis Report
           </button>
         </div>
       </div>
