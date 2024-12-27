@@ -5,6 +5,7 @@ const PROJECT_NAME = 'Development of a Turkish Language Processing System with I
 const PROJECT_PROPOSAL_FILE_URL = '/CMPE 491 - Project Proposal.pdf';
 const PROJECT_SPECIFICATIONS_FILE_URL = '/CMPE 491 - Project Specifications Report.pdf';
 const PROJECT_ANALYSIS_REPORT_FILE_URL = '/CMPE 491 - Project Analysis Report.pdf'
+const PROJECT_HIGH_LEVEL_DESIGN_REPORT = '/CMPE 491 - High-Level Design Report.pdf'
 
 function App() {
   const downloadFileAtUrl = (url) => {
@@ -45,6 +46,9 @@ function App() {
           </button>
           <button onClick={() => downloadFileAtUrl(PROJECT_ANALYSIS_REPORT_FILE_URL)}>
             Project Analysis Report
+          </button>
+          <button onClick={() => downloadFileAtUrl(PROJECT_HIGH_LEVEL_DESIGN_REPORT)}>
+            High-Level Design Report
           </button>
         </div>
       </div>
