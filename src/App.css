@@ -8,6 +8,7 @@ body {
   background-color: #f7fafc;
   color: #4a5568;
   line-height: 1.6;
+  box-sizing: border-box;
 }
 
 /* Navbar */
@@ -60,39 +61,39 @@ nav button span {
 
 /* Hero Section */
 header {
-  padding-top: 4rem;
+  padding-top: 5rem;
   background-size: cover;
   background-position: center;
-  position: relative;
-}
-
-header .text-center {
-  color: white;
   text-align: center;
-  align-content: center;
 }
 
 header h1 {
-  font-size: 3.0rem;
+  font-size: 2.5rem;
   font-weight: bold;
-  margin-bottom: 2.0rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  padding-top: 5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 header p {
   font-size: 1.25rem;
-  max-width: 700px;
+  max-width: 80%;
   margin: 0 auto;
-  color: #e2e8f0;
+  color: white;
 }
 
 /* Project Overview Section */
 #overview {
-  padding: 2rem 15rem;
+  padding: 3rem 10%;
   background-color: white;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 #overview h2 {
-  font-size: 2.00rem;
+  font-size: 2rem;
   font-weight: bold;
   margin-bottom: 2rem;
   text-align: left;
@@ -108,9 +109,9 @@ header p {
 
 #overview .grid {
   display: grid;
-  gap: 1rem;
+  gap: 1.5rem;
   margin-top: 2rem;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
 }
 
 #overview .grid div {
@@ -125,6 +126,68 @@ header p {
 #overview .grid div:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Düzenlemeler */
+@media (max-width: 1024px) {
+  nav {
+    padding: 16px 3%;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  #overview {
+    padding: 3rem 5%;
+  }
+
+  #overview h2 {
+    font-size: 1.75rem;
+  }
+
+  #overview p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  nav .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header {
+    padding-top: 6rem;
+  }
+
+  header h1 {
+    font-size: 1.75rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+
+  #overview {
+    padding: 2rem 5%;
+  }
+
+  #overview .grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Features Section */
