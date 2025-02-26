@@ -11,53 +11,90 @@ body {
   box-sizing: border-box;
 }
 
-/* Navbar */
-nav {
-  background-color: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 16px 0;
-}
+/* Navbar */  
+nav {  
+  background-color: rgba(255, 255, 255, 0.9);  
+  backdrop-filter: blur(10px);  
+  position: fixed;  
+  width: 100%;  
+  z-index: 1000;  
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
+  padding: 16px 0;  
+}  
 
 nav .flex {  
   display: flex;  
-  justify-content: center; 
+  justify-content: space-between;   
+  align-items: center;  
+  max-width: 1200px;  
+  margin: 0 auto;  
+  padding: 0 20px;  
+}  
+
+nav a {  
+  text-decoration: none;  
+  color: #4a5568;  
+  font-size: 1rem;  
+  padding: 8px 16px;  
+  margin-right: 20px;  
+  transition: color 0.3s ease;  
+}  
+
+nav a:hover {  
+  color: #2b6cb0;  
+}  
+
+nav button {  
+  background-color: #e2e8f0;  
+  padding: 8px 16px;  
+  border-radius: 8px;  
+  transition: background-color 0.3s ease;  
+  display: flex;  
   align-items: center;  
 }  
 
-nav a {
-  text-decoration: none;
-  color: #4a5568;
-  font-size: 1rem;
-  padding: 8px 16px;
-  margin-right: 20px;
-  transition: color 0.3s ease;
-}
+nav button:hover {  
+  background-color: #a1ccfb;  
+}  
 
-nav a:hover {
-  color: #2b6cb0;
-}
+nav button span {  
+  font-weight: 500;  
+}  
 
-nav button {
-  background-color: #e2e8f0;
-  padding: 8px 16px;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  display: flex;
-  align-items: center;
-  margin-left: 50rem;
-}
+/* Mobile Responsive Styles */  
+@media screen and (max-width: 768px) {  
+  nav .flex {  
+    flex-direction: column;  
+    align-items: center;  
+  }  
 
-nav button:hover {
-  background-color: #a1ccfb;
-}
+  nav a {  
+    margin-right: 0;  
+    margin-bottom: 10px;  
+  }  
 
-nav button span {
-  font-weight: 500;
-}
+  nav button {  
+    margin-left: 0;  
+    margin-top: 10px;  
+  }  
+}  
+
+/* Hamburger Menu for Very Small Screens */  
+@media screen and (max-width: 480px) {  
+  .menu-toggle {  
+    display: block;  
+    cursor: pointer;  
+  }  
+
+  nav .flex {  
+    display: none;  
+    flex-direction: column;  
+  }  
+
+  nav .flex.active {  
+    display: flex;  
+  }  
+}  
 
 /* Hero Section */
 header {
@@ -190,52 +227,45 @@ header p {
   }
 }
 
-/* Features Section */
-#features {
-  padding: 2rem 10rem;
-  background-color: #f7fafc;
-}
+/* Features Section - Responsive Optimization */  
+#features {  
+  padding: 2rem 5%; /* Use percentage for horizontal padding */  
+  background-color: #f7fafc;  
+}  
 
-#features h2 {
-  font-size: 2.00rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
-  text-align: center;
-  color: black;
-}
+#features h2 {  
+  font-size: 2.00rem;  
+  font-weight: bold;  
+  margin-bottom: 2rem;  
+  text-align: center;  
+  color: black;  
+}  
 
-#features .grid {
-  gap: 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
-}
+#features .grid {  
+  gap: 1.5rem;  
+  display: grid;  
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust min width */  
+}  
 
-#features .grid div {
-  background-color: white;
-  padding: 1.0rem; 
-  border-radius: 8px; 
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.07); 
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  font-size: 0.85rem; 
-}
+#features .grid div {  
+  background-color: white;  
+  padding: 1.5rem;   
+  border-radius: 8px;   
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.07);   
+  text-align: center;  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;  
+}  
 
-#features .grid div:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-}
+#features .grid div i {  
+  color: #2b6cb0; 
+  font-size: 2rem; /* Slightly enlarged icons */  
+  margin-bottom: 0.5rem;  
+}  
 
-#features .grid div h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: rgb(47, 44, 44);
-}
-
-#features .grid div p {
-  color: #4a5568;
-  font-size: 0.90rem;
-}
+/* Hover effect with a darker blue */  
+#features .grid div:hover i {  
+  color: #1e4e8c; /* Darker blue on hover */  
+}  
 
 .icon {
   color: #3c67f6; 
@@ -245,15 +275,61 @@ header p {
   height: 2rem;
 }
 
+/* Large screen (Desktop) adjustments */  
+@media screen and (min-width: 1025px) {  
+  #features .grid {  
+    grid-template-columns: repeat(3, 1fr); /* Three columns on large screens */  
+  }  
+}  
+
+/* Mobile-specific adjustments */  
+@media screen and (max-width: 768px) {  
+  #features {  
+    padding: 1rem 3%; /* Tighter padding on smaller screens */  
+  }  
+
+  #features h2 {  
+    font-size: 1.75rem; /* Slightly smaller heading */  
+  }  
+
+  #features .grid {  
+    grid-template-columns: 1fr; /* Single column on mobile */  
+    gap: 1rem;  
+  }  
+
+  #features .grid div {  
+    padding: 1rem;  
+  }  
+
+  #features .grid div h3 {  
+    font-size: 1.1rem;  
+  }  
+
+  #features .grid div p {  
+    font-size: 0.85rem;  
+  }  
+}  
+
+/* Tablet adjustments */  
+@media screen and (min-width: 769px) and (max-width: 1024px) {  
+  #features {  
+    padding: 2rem 4%;  
+  }  
+
+  #features .grid {  
+    grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */  
+  }  
+}
+
 /* Reports Section */
 #reports {
-  padding: 2rem 10rem;
+  padding: 2rem 5%; 
   background-color: #f9fafb;
   margin-bottom: 3rem;
 }
 
 #reports h2 {
-  font-size: 2.00rem;
+  font-size: 2rem;
   font-weight: bold;
   margin-bottom: 2rem;
   text-align: center;
@@ -268,13 +344,12 @@ header p {
 
 #reports .grid div {
   background-color: #ffffff;
-  padding-top: 0.50rem;
-  padding-bottom: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
@@ -295,8 +370,8 @@ header p {
 #reports .grid div p {
   color: #4a5568;
   font-size: 0.90rem;
-  text-align: left;
-  width: 100px;
+  text-align: center;
+  max-width: 100%;
 }
 
 #reports .grid div a {
@@ -324,11 +399,57 @@ header p {
   padding-right: 6px;
 }
 
+/* Large screen (Desktop) adjustments */
+@media screen and (min-width: 1025px) {
+  #reports .grid {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+/* Mobile-specific adjustments */
+@media screen and (max-width: 768px) {
+  #reports {
+    padding: 1rem 3%; 
+  }
+
+  #reports h2 {
+    font-size: 1.75rem; 
+  }
+
+  #reports .grid {
+    grid-template-columns: 1fr; 
+    gap: 1rem;
+  }
+
+  #reports .grid div {
+    padding: 1rem;
+  }
+
+  #reports .grid div h3 {
+    font-size: 1.1rem;
+  }
+
+  #reports .grid div p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Tablet adjustments */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  #reports {
+    padding: 2rem 4%;
+  }
+
+  #reports .grid {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
 /* Footer */
 footer {
   background-color: #021b46;
   color: white;
-  padding: 2rem 0;
+  padding: 2rem 5%; /* Yatay padding yüzde ile ayarlandı */
   text-align: center;
 }
 
@@ -337,4 +458,27 @@ footer p {
   color: #e2e8f0;
   margin: 0;
 }
+
+/* Mobile-specific adjustments */
+@media screen and (max-width: 768px) {
+  footer {
+    padding: 1.5rem 3%;
+  }
+
+  footer p {
+    font-size: 0.9rem; 
+  }
+}
+
+/* Tablet adjustments */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  footer {
+    padding: 2rem 4%;
+  }
+
+  footer p {
+    font-size: 0.95rem;
+  }
+}
+
 
