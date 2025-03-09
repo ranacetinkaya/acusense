@@ -92,7 +92,11 @@ function App() {
     },
     {
       name: "High-Level Design Report",
-      url: "CMPE 491 - High-Level Design Report.pdf"
+      url: "/CMPE 491 - High-Level Design Report.pdf"
+    },
+    {
+      name: "Low-Level Design Report",
+      url: "/CMPE 492 - Low-Level Design Report.pdf"
     },
     {
       name: "Backlog Document",
