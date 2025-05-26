@@ -103,6 +103,10 @@ function App() {
       url: "/CMPE 492 - Test Plan Report.pdf"
     },
     {
+      name: "Final Report",
+      url: "/CMPE 492 - Final Report.pdf"
+    },
+    {
       name: "Backlog Document",
       url: "CMPE 491 - Backlog Document.pdf"
     }
